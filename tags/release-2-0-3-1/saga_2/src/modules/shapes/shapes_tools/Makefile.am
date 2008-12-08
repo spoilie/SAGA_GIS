@@ -1,0 +1,70 @@
+#
+# $Id: Makefile.am,v 1.8 2008-04-16 16:21:03 oconrad Exp $
+#
+if DEBUG
+DBGFLAGS = -g -DDEBUG
+endif
+if SAGA_UNICODE
+UC_DEFS = -D_SAGA_UNICODE
+endif
+DEF_SAGA           = -D_SAGA_LINUX -D_TYPEDEF_BYTE -D_TYPEDEF_WORD
+CXX_INCS           = -I$(top_srcdir)/src/saga_core
+AM_CXXFLAGS        = -fPIC $(CXX_INCS) $(DEF_SAGA) $(UC_DEFS) $(DBGFLAGS)
+AM_LDFLAGS         = -fPIC -shared
+pkglib_LTLIBRARIES = libshapes_tools.la
+libshapes_tools_la_SOURCES =\
+CreateChartLayer.cpp\
+CreateWebContent.cpp\
+GraticuleBuilder.cpp\
+Polygon_Clipper.cpp\
+MLB_Interface.cpp\
+NewLayerFromSelectedShapes.cpp\
+QueryBuilder.cpp\
+QueryParser.cpp\
+SearchInTable.cpp\
+SelectByTheme.cpp\
+SeparateShapes.cpp\
+Shapes_Assign_Table.cpp\
+Shapes_Create_Empty.cpp\
+Shapes_Merge.cpp\
+Shapes_Report.cpp\
+ShapeSearchSelector.cpp\
+ShapeSelector.cpp\
+Summarize.cpp\
+SummaryPDFDocEngine.cpp\
+TransformShapes.cpp\
+shapes_buffer.cpp\
+shapes_cut.cpp\
+shapes_cut_interactive.cpp\
+shapes_split.cpp\
+shapes_split_randomly.cpp\
+CreateChartLayer.h\
+CreateWebContent.h\
+GraticuleBuilder.h\
+Polygon_Clipper.h\
+MLB_Interface.h\
+NewLayerFromSelectedShapes.h\
+QueryBuilder.h\
+QueryParser.h\
+SearchInTable.h\
+SelectByTheme.h\
+SeparateShapes.h\
+Shapes_Assign_Table.h\
+Shapes_Create_Empty.h\
+Shapes_Merge.h\
+Shapes_Report.h\
+ShapeSearchSelector.h\
+ShapeSelector.h\
+Summarize.h\
+SummaryPDFDocEngine.h\
+TransformShapes.h\
+shapes_buffer.h\
+shapes_cut.h\
+shapes_cut_interactive.h\
+shapes_split.h\
+shapes_split_randomly.h
+
+libshapes_tools_la_LIBADD = $(top_srcdir)/src/saga_core/saga_api/libsaga_api.la
+
+#install-exec-hook:
+#	pushd .; cd $(pkglibdir); ln -s libshapes_tools.so shapes_tools.so; popd
