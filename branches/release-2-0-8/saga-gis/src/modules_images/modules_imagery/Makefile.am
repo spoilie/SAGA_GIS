@@ -1,0 +1,1 @@
+SUBDIRS = imagery_classification imagery_rga imagery_segmentation imagery_tools
