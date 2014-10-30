@@ -1,0 +1,36 @@
+_______________________________________________________________________________
+
+         SAGA 2.1.3 - System for Automated Geoscientific Analyses
+_______________________________________________________________________________
+
+* Introduction
+
+SAGA - System for Automated Geoscientific Analyses - is a Free Open Source Software for the analysis of spatial data.
+
+
+* Internet
+
+- www.saga-gis.org
+- sourceforge.net/projects/saga-gis
+
+
+* Supported Platforms
+
+- Windows (Microsoft Visual C++ 10.0)
+- Linux (gcc)
+- FreeBSD
+
+
+* Required Libraries
+
+- wxWidgets 3.0.0
+- GDAL 1.8.0
+- Proj4
+- Haru Free PDF Library (optional)
+- libLAS 1.2 (optional)
+- opencv (optional)
+- vigra (optional)
+
+_______________________________________________________________________________
+Date: November, 3th 2013
+
